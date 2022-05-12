@@ -12,6 +12,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -156,8 +157,10 @@ class BrowserFragment :
                     val isGranted = it.value
                     if (isGranted) {
                         grandResults.add(PackageManager.PERMISSION_GRANTED)
+                        Log.d("TestLog", "permission granted")
                     } else {
                         grandResults.add(PackageManager.PERMISSION_DENIED)
+                        Log.d("TestLog", "permission denied")
                     }
                 }
                 val feature = sitePermissionsFeature.get()

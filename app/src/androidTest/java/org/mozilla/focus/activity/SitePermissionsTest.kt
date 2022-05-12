@@ -236,10 +236,10 @@ class SitePermissionsTest {
         }
     }
 
-    @Ignore(
-        "Camera not available on some AVDs: " +
-            "https://github.com/mozilla-mobile/mobile-test-eng/issues/622"
-    )
+    // @Ignore(
+    //     "Camera not available on some AVDs: " +
+    //         "https://github.com/mozilla-mobile/mobile-test-eng/issues/622"
+    // )
     @SmokeTest
     @Test
     fun allowCameraPermissionsTest() {
@@ -254,10 +254,10 @@ class SitePermissionsTest {
         }
     }
 
-    @Ignore(
-        "Camera not available on some AVDs: " +
-            "https://github.com/mozilla-mobile/mobile-test-eng/issues/622"
-    )
+    // @Ignore(
+    //     "Camera not available on some AVDs: " +
+    //         "https://github.com/mozilla-mobile/mobile-test-eng/issues/622"
+    // )
     @SmokeTest
     @Test
     fun denyCameraPermissionsTest() {
