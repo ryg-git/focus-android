@@ -103,9 +103,12 @@ private val blockAudioAndVideoOption =
 
 private fun assertBlockAudioOnlyIsChecked() {
     val radioButton =
-        mDevice.findObject(UiSelector().text(getStringResource(R.string.preference_block_autoplay_audio_only)))
-            .getFromParent(UiSelector().className("android.widget.RadioButton"))
-
+        mDevice.findObject(
+            UiSelector()
+                .className("android.view.View")
+                .childSelector(
+                    UiSelector().text(getStringResource(R.string.preference_block_autoplay_audio_only)))
+        )
     assertTrue(radioButton.isChecked)
 }
 

@@ -99,7 +99,7 @@ class SafeBrowsingTest {
 
     @SmokeTest
     @Test
-    @Ignore("https://github.com/mozilla-mobile/focus-android/issues/6967")
+   // @Ignore("https://github.com/mozilla-mobile/focus-android/issues/6967")
     fun unblockSafeBrowsingTest() {
         val malwareURl = "http://itisatrap.org/firefox/its-an-attack.html"
 

@@ -71,7 +71,7 @@ class AddToHomescreenTest {
 
     @SmokeTest
     @Test
-    @Ignore("See https://github.com/mozilla-mobile/focus-android/issues/6958")
+    //@Ignore("See https://github.com/mozilla-mobile/focus-android/issues/6958")
     fun noNameShortcutTest() {
         val pageUrl = getGenericTabAsset(webServer, 1).url
 
