@@ -38,12 +38,7 @@ gcloud:
   performance-metrics: true
 
   test-targets:
-    - package org.mozilla.focus.activity.SwitchContextTest#switchFromSettingsToFocusTest
-    - package org.mozilla.focus.activity.AddToHomeScreenTest#noNameShortcutTest
-    - package org.mozilla.focus.activity.SitePermissionsTest#blockAudioVideoAutoplayPermissionTest
-    - package org.mozilla.focus.activity.SitePermissionsTest#sitePermissionsSettingsItemsTest
-    - package org.mozilla.focus.activity.SitePermissionsTest#allowAudioVideoAutoplayPermissionTest
-    - package org.mozilla.focus.activity.SitePermissionsTest#allowAudioVideoAutoplayPermissionOnMutedVideoTest
+    - package org.mozilla.focus.activity.SitePermissionsTest
     - package org.mozilla.focus.activity.SafeBrowsingTest#unblockSafeBrowsingTest
     #- package org.mozilla.focus.privacy
 
