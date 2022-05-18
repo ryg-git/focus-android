@@ -571,8 +571,8 @@ private fun safeBrowsingSwitch(): ViewInteraction {
             UiSelector().text(
                 getStringResource(R.string.preference_safe_browsing_summary))
         )
+    privacySettingsList.scrollToEnd(3)
     privacySettingsList.scrollIntoView(safeBrowsingSwitchText)
-    privacySettingsList.ensureFullyVisible(safeBrowsingSwitchText)
     return onView(withText(getStringResource(R.string.preference_safe_browsing_summary)))
 }
 
