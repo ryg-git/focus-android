@@ -6,6 +6,7 @@ package org.mozilla.focus.activity
 
 import android.content.Context
 import android.hardware.camera2.CameraManager
+import androidx.test.uiautomator.UiSelector
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Assume
@@ -22,7 +23,9 @@ import org.mozilla.focus.helpers.TestAssetHelper.getMediaTestAsset
 import org.mozilla.focus.helpers.TestHelper.exitToTop
 import org.mozilla.focus.helpers.TestHelper.getTargetContext
 import org.mozilla.focus.helpers.TestHelper.grantAppPermission
+import org.mozilla.focus.helpers.TestHelper.mDevice
 import org.mozilla.focus.helpers.TestHelper.waitingTime
+import org.mozilla.focus.helpers.TestHelper.waitingTimeShort
 import org.mozilla.focus.testAnnotations.SmokeTest
 
 class SitePermissionsTest {
@@ -248,6 +251,9 @@ class SitePermissionsTest {
         }.loadPage(permissionsPage) {
             clickGetCameraButton()
             grantAppPermission()
+            if (mDevice.findObject(UiSelector().textContains("ALLOW")).waitForExists(
+                    waitingTimeShort))
+                mDevice.findObject(UiSelector().textContains("ALLOW")).click()
             verifyCameraPermissionPrompt(testPageSubstring)
             allowSitePermissionRequest()
             verifyPageContent("Camera allowed")
@@ -266,6 +272,9 @@ class SitePermissionsTest {
         }.loadPage(permissionsPage) {
             clickGetCameraButton()
             grantAppPermission()
+            if (mDevice.findObject(UiSelector().textContains("ALLOW")).waitForExists(
+                    waitingTimeShort))
+                mDevice.findObject(UiSelector().textContains("ALLOW")).click()
             verifyCameraPermissionPrompt(testPageSubstring)
             denySitePermissionRequest()
             verifyPageContent("Camera not allowed")
